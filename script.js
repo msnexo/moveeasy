@@ -120,36 +120,124 @@ document.addEventListener('DOMContentLoaded', () => {
   modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  /* ---------- Contact form ---------- */
-  const form = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name') || '';
-    const email = data.get('email') || '';
-    const phone = data.get('phone') || '';
-    const service = data.get('service') || '';
-    const from = data.get('from') || '';
-    const to = data.get('to') || '';
-    const message = data.get('message') || '';
+  /* ---------- Angebots-Assistent (Wizard) ---------- */
+  const wizard = document.getElementById('wizard');
+  if (wizard) {
+    const steps = Array.from(wizard.querySelectorAll('.wizard-step[data-step-panel]'));
+    const tabs = Array.from(wizard.querySelectorAll('.wizard-step-tab'));
+    const lines = Array.from(wizard.querySelectorAll('.wizard-step-line'));
+    const backBtn = document.getElementById('wizardBack');
+    const nextBtn = document.getElementById('wizardNext');
+    const formSuccess = document.getElementById('formSuccess');
+    const lastStep = steps.length - 1;
+    let current = 0;
 
-    const bodyLines = [
-      `Name: ${name}`,
-      `E-Mail: ${email}`,
-      `Telefon: ${phone}`,
-      `Leistung: ${service}`,
-      `Von: ${from}`,
-      `Nach: ${to}`,
-      '',
-      message
-    ].join('\n');
+    const state = {
+      service: null,
+      pickupRooms: null, pickupFloor: null, pickupElevator: null, pickupParking: null, pickupAssembly: null, pickupPacking: null,
+      dropoffRooms: null, dropoffFloor: null, dropoffElevator: null, dropoffParking: null, dropoffAssembly: null, dropoffPacking: null,
+    };
 
-    const mailto = `mailto:info@move-easy.info?subject=${encodeURIComponent('Anfrage über die Website: ' + service)}&body=${encodeURIComponent(bodyLines)}`;
+    /* Selection buttons (options + pills), grouped by closest [data-group] */
+    wizard.querySelectorAll('.wizard-option, .wizard-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('[data-group]');
+        if (!group) return;
+        const groupName = group.dataset.group;
+        group.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+        btn.classList.add('selected');
+        state[groupName] = btn.dataset.value;
+        updateNextState();
+      });
+    });
 
-    formSuccess.hidden = false;
-    window.location.href = mailto;
-  });
+    const dateInput = document.getElementById('wizardDate');
+    const flexibleCheck = document.getElementById('wizardFlexible');
+    const pickupAddress = document.getElementById('wizardPickupAddress');
+    const dropoffAddress = document.getElementById('wizardDropoffAddress');
+    const nameInput = document.getElementById('wizardName');
+    const phoneInput = document.getElementById('wizardPhone');
+    [dateInput, pickupAddress, dropoffAddress, nameInput, phoneInput].forEach(el => {
+      if (el) el.addEventListener('input', updateNextState);
+    });
+    if (flexibleCheck) flexibleCheck.addEventListener('change', () => {
+      if (flexibleCheck.checked) dateInput.value = '';
+      updateNextState();
+    });
+
+    function isStepValid(index) {
+      if (index === 0) return !!state.service;
+      if (index === 3) return !!(dateInput.value || (flexibleCheck && flexibleCheck.checked));
+      if (index === 4) return !!(pickupAddress.value.trim() && dropoffAddress.value.trim());
+      if (index === 5) return !!(nameInput.value.trim() && phoneInput.value.trim());
+      return true;
+    }
+
+    function updateNextState() {
+      nextBtn.disabled = !isStepValid(current);
+    }
+
+    function showStep(index) {
+      steps.forEach((panel, i) => { panel.hidden = i !== index; });
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+        tab.classList.toggle('done', i < index);
+      });
+      lines.forEach((line, i) => { line.classList.toggle('done', i < index); });
+      backBtn.hidden = index === 0;
+      nextBtn.textContent = index === lastStep ? 'Kostenloses Angebot anfordern' : 'Weiter →';
+      updateNextState();
+      wizard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    backBtn.addEventListener('click', () => {
+      if (current > 0) { current--; showStep(current); }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (nextBtn.disabled) return;
+      if (current < lastStep) {
+        current++;
+        showStep(current);
+      } else {
+        submitWizard();
+      }
+    });
+
+    function submitWizard() {
+      const pickupNotes = document.getElementById('pickupNotes').value.trim();
+      const dropoffNotes = document.getElementById('dropoffNotes').value.trim();
+      const termin = flexibleCheck && flexibleCheck.checked ? 'Flexibel / noch offen' : (dateInput.value || '–');
+
+      const bodyLines = [
+        `Dienstleistung: ${state.service || '–'}`,
+        '',
+        `Abholadresse: ${pickupAddress.value.trim() || '–'}`,
+        `Zimmer: ${state.pickupRooms || '–'} | Etage: ${state.pickupFloor || '–'} | Aufzug: ${state.pickupElevator || '–'}`,
+        `Parken: ${state.pickupParking || '–'} | Möbelmontage: ${state.pickupAssembly || '–'} | Verpackungsservice: ${state.pickupPacking || '–'}`,
+        pickupNotes ? `Hinweise Abholort: ${pickupNotes}` : '',
+        '',
+        `Lieferadresse: ${dropoffAddress.value.trim() || '–'}`,
+        `Zimmer: ${state.dropoffRooms || '–'} | Etage: ${state.dropoffFloor || '–'} | Aufzug: ${state.dropoffElevator || '–'}`,
+        `Parken: ${state.dropoffParking || '–'} | Möbelmontage: ${state.dropoffAssembly || '–'} | Verpackungsservice: ${state.dropoffPacking || '–'}`,
+        dropoffNotes ? `Hinweise Zielort: ${dropoffNotes}` : '',
+        '',
+        `Wunschtermin: ${termin}`,
+        '',
+        `Name: ${nameInput.value.trim()}`,
+        `Telefon: ${phoneInput.value.trim()}`,
+        `E-Mail: ${document.getElementById('wizardEmail').value.trim() || '–'}`,
+      ].filter(Boolean).join('\n');
+
+      const mailto = `mailto:info@move-easy.info?subject=${encodeURIComponent('Angebotsanfrage über die Website: ' + (state.service || ''))}&body=${encodeURIComponent(bodyLines)}`;
+
+      formSuccess.hidden = false;
+      nextBtn.disabled = true;
+      window.location.href = mailto;
+    }
+
+    showStep(0);
+  }
 
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
