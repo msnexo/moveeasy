@@ -4,355 +4,388 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta name="description" content="Partnerprogramm von MoveEasy Transporte für Immobilienmakler, Hausverwaltungen, Berufsbetreuer, Pflegeheime, Sanierungsfirmen, Wohnungsgesellschaften und Nachlasspfleger.">
+<title>Partnerprogramm | MoveEasy Transporte</title>
+<meta name="description" content="Partnerprogramm von MoveEasy Transporte: Empfehlungsprovision oder Festkundenrabatt f&uuml;r Immobilienmakler, Hausverwaltungen, Berufsbetreuer, Pflegeheime, Sanierungsfirmen, Wohnungsgesellschaften und Nachlasspfleger.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Partnerprogramm | MoveEasy Transporte">
-<meta property="og:description" content="Partnerprogramm von MoveEasy Transporte für Immobilienmakler, Hausverwaltungen, Berufsbetreuer, Pflegeheime, Sanierungsfirmen, Wohnungsgesellschaften und Nachlasspfleger.">
 <link rel="icon" type="image/png" href="../images/favicon-32.png">
-<style>
-*,*::before,*::after{ box-sizing:border-box; }
-html{ color-scheme: light dark; }
-body{ margin:0; }
-img{ max-width:100%; }
-</style>
-<title>Partnerprogramm | MoveEasy Transporte</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style>
+*,*::before,*::after{ box-sizing:border-box; }
 :root{
   --paper:#f4f8fd; --surface:#fff; --ink:#0c1c2e; --soft:#465c78; --faint:#7789a1;
-  --deep:#0a2a52; --cyan:#1c86c4; --cyan-br:#29a8e0; --rule:#dbe5f0;
-  --flag:#9a5a08; --flag-bg:#fcf1e0; --flag-line:#dcae6e;
+  --deep:#0a2a52; --acc:#1c86c4; --acc-br:#29a8e0; --rule:#dbe5f0; --tint:#eaf4fb;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --paper:#07131f; --surface:#0e1e30; --ink:#e7eff8; --soft:#a5b8ce; --faint:#7789a1;
-    --deep:#84b8ea; --cyan:#5cbaee; --cyan-br:#7ccbf3; --rule:#1e3350;
-    --flag:#e8a95a; --flag-bg:#221a0b; --flag-line:#6a4a1b;
+    --deep:#84b8ea; --acc:#5cbaee; --acc-br:#7ccbf3; --rule:#1e3350; --tint:#13273d;
   }
 }
 :root[data-theme="dark"]{
   --paper:#07131f; --surface:#0e1e30; --ink:#e7eff8; --soft:#a5b8ce; --faint:#7789a1;
-  --deep:#84b8ea; --cyan:#5cbaee; --cyan-br:#7ccbf3; --rule:#1e3350;
-  --flag:#e8a95a; --flag-bg:#221a0b; --flag-line:#6a4a1b;
+    --deep:#84b8ea; --acc:#5cbaee; --acc-br:#7ccbf3; --rule:#1e3350; --tint:#13273d;
 }
-
-body{ background:var(--paper); color:var(--ink); font-family:"Inter","Segoe UI",system-ui,sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
-.wrap{ max-width:880px; margin:0 auto; padding:0 24px 80px; }
+html{ color-scheme: light dark; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Inter","Segoe UI",system-ui,sans-serif; font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; }
 h1,h2,h3{ font-family:"Sora",system-ui,sans-serif; margin:0; text-wrap:balance; }
 p{ margin:0; }
+a{ color:var(--acc); }
+.wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
 
-@keyframes rise{ from{ opacity:0; transform:translateY(12px);} to{ opacity:1; transform:none;} }
-.r{ animation:rise .5s cubic-bezier(.2,.7,.3,1) both; }
-.r1{animation-delay:.05s}.r2{animation-delay:.13s}.r3{animation-delay:.21s}.r4{animation-delay:.29s}
+@keyframes rise{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;} }
+.r{ animation:rise .55s cubic-bezier(.2,.7,.3,1) both; }
+.r1{animation-delay:.05s}.r2{animation-delay:.14s}.r3{animation-delay:.23s}
 
-/* ---- Kopf ---- */
-header{ padding:40px 0 0; text-align:center; }
-header img{ height:58px; width:auto; margin:0 auto; display:block; }
-.tag{ margin-top:18px; font-family:"Sora"; font-weight:700; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--cyan); }
-h1{ margin-top:14px; font-size:clamp(1.8rem,4.6vw,2.7rem); font-weight:800; line-height:1.15; }
-h1 em{ font-style:normal; color:var(--cyan); }
-.sub{ margin:14px auto 0; max-width:46ch; color:var(--soft); font-size:1.05rem; }
-
-/* ---- Chevron-Fluss (Logoform) ---- */
-.flow{ display:flex; justify-content:center; gap:9px; margin:28px 0 2px; }
-.flow i{
-  width:15px; height:26px; display:block;
-  background:var(--cyan-br);
-  clip-path: polygon(0 0, 62% 0, 100% 50%, 62% 100%, 0 100%, 38% 50%);
-  animation: pulse 2.1s ease-in-out infinite;
+/* --- Kopf --- */
+.top{ padding:26px 0; border-bottom:1px solid var(--rule); background:var(--surface); }
+.top .wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.top img{ height:44px; width:auto; display:block; }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .top img{ background:#fff; border-radius:9px; padding:5px 9px; }
 }
-.flow i:nth-child(2){ animation-delay:.12s } .flow i:nth-child(3){ animation-delay:.24s }
-.flow i:nth-child(4){ animation-delay:.36s } .flow i:nth-child(5){ animation-delay:.48s }
-.flow i:nth-child(6){ animation-delay:.60s } .flow i:nth-child(7){ animation-delay:.72s }
-@keyframes pulse{ 0%,100%{ opacity:.22; transform:translateX(0);} 40%{ opacity:1; transform:translateX(4px);} }
+:root[data-theme="dark"] .top img{ background:#fff; border-radius:9px; padding:5px 9px; }
+.top-call{ display:inline-flex; align-items:center; gap:8px; font-weight:700; color:var(--deep); text-decoration:none; font-size:.95rem; }
 
-/* ---- Abschnitte ---- */
-section{ padding-top:52px; }
-h2{ font-size:clamp(1.2rem,2.6vw,1.5rem); font-weight:700; text-align:center; }
-.lead{ margin:8px auto 26px; max-width:52ch; text-align:center; color:var(--soft); font-size:.96rem; }
+.hero{ padding:70px 0 8px; text-align:center; }
+.kick{ font-family:"Sora"; font-weight:700; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--acc); }
+h1{ margin-top:16px; font-size:clamp(2rem,5vw,3rem); font-weight:800; line-height:1.12; }
+h1 em{ font-style:normal; color:var(--acc); }
+.hero p{ margin:18px auto 0; max-width:56ch; color:var(--soft); font-size:1.08rem; }
 
-/* ---- Zielgruppen ---- */
-.tiles{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.tile{
-  background:var(--surface); border:1px solid var(--rule); border-radius:14px;
-  padding:20px 16px; text-align:center;
-  transition:transform .25s cubic-bezier(.2,.7,.3,1), border-color .25s, box-shadow .25s;
+section{ padding:66px 0; }
+.sec-head{ text-align:center; margin-bottom:38px; }
+.sec-head h2{ margin-top:9px; font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; }
+.sec-head p{ margin:12px auto 0; max-width:56ch; color:var(--soft); font-size:1rem; }
+
+/* --- Anmeldung --- */
+.signup{ background:var(--surface); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.signup-grid{ display:grid; grid-template-columns:0.82fr 1.18fr; gap:28px; align-items:start; }
+.card{ background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:26px; }
+.person{ text-align:center; }
+.avatar{
+  width:78px; height:78px; margin:0 auto 16px; border-radius:50%;
+  background:var(--deep); color:#fff; display:flex; align-items:center; justify-content:center;
+  font-family:"Sora"; font-weight:800; font-size:1.55rem; letter-spacing:.02em;
 }
-.tile:hover{ transform:translateY(-5px); border-color:var(--cyan-br); box-shadow:0 14px 30px -18px rgba(10,42,82,.5); }
-.tile svg{ width:26px; height:26px; color:var(--cyan); margin-bottom:10px; }
-.tile b{ display:block; font-family:"Sora"; font-size:.88rem; font-weight:700; line-height:1.3; }
-.tile span{ display:block; margin-top:5px; font-size:.8rem; color:var(--faint); line-height:1.45; }
-
-/* ---- Drei Schritte ---- */
-.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; counter-reset:s; }
-.stepc{ background:var(--surface); border:1px solid var(--rule); border-radius:14px; padding:24px 22px; }
-.stepc::before{
-  counter-increment:s; content:counter(s);
-  display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:9px;
-  background:var(--cyan); color:#fff; font-family:"Sora"; font-weight:800; font-size:.9rem; margin-bottom:14px;
+.person .role{ font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--acc); font-weight:700; }
+.person h3{ margin:6px 0 8px; font-size:1.2rem; font-weight:700; }
+.person p{ color:var(--soft); font-size:.92rem; }
+.contact-line{ margin-top:16px; display:grid; gap:9px; }
+.contact-line a{ display:inline-flex; align-items:center; justify-content:center; gap:9px; font-weight:600; font-size:.95rem; text-decoration:none; }
+.contact-line svg{ width:17px; height:17px; }
+.mini{ margin-top:14px; display:grid; gap:12px; }
+.mini a{
+  display:flex; align-items:center; gap:14px; text-decoration:none;
+  background:var(--paper); border:1px solid var(--rule); border-radius:14px; padding:16px 18px;
+  transition:border-color .25s, transform .25s;
 }
-.stepc h3{ font-size:1rem; font-weight:700; margin-bottom:5px; }
-.stepc p{ font-size:.89rem; color:var(--soft); }
+.mini a:hover{ border-color:var(--acc-br); transform:translateY(-2px); }
+.mini i{ width:40px; height:40px; border-radius:11px; background:var(--tint); color:var(--acc); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.mini svg{ width:19px; height:19px; }
+.mini b{ display:block; font-family:"Sora"; font-size:.95rem; color:var(--ink); }
+.mini span{ font-size:.88rem; color:var(--soft); }
 
-/* ---- Provision ---- */
-.deal{ background:var(--deep); color:#fff; border-radius:18px; padding:38px 34px; text-align:center; }
-:root[data-theme="dark"] .deal{ background:#102743; border:1px solid var(--rule); }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .deal{ background:#102743; border:1px solid var(--rule); } }
-.deal .num{ font-family:"Sora"; font-weight:800; font-size:clamp(3rem,9vw,4.4rem); line-height:1; }
-.deal .of{ margin-top:10px; color:rgba(255,255,255,.76); font-size:1rem; }
-.pills{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
-.pills span{ font-size:.85rem; padding:7px 16px; border-radius:999px; background:rgba(255,255,255,.12); }
-.fill{ display:inline-block; min-width:1.9em; padding:0 .18em; background:var(--flag-bg); color:var(--flag); border-bottom:3px dotted var(--flag-line); border-radius:3px; }
-.pills .fill{ min-width:1.6em; border-bottom-width:2px; }
-.deal .fill{ background:rgba(255,255,255,.16); color:#fff; border-bottom-color:rgba(255,255,255,.55); }
-.deal .num .fill{ min-width:1.15em; border-bottom-width:5px; }
-
-/* ---- Gebiet ---- */
-.area{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
-.area span{ font-size:.84rem; padding:6px 14px; border:1px solid var(--rule); border-radius:999px; color:var(--soft); background:var(--surface); }
-
-/* ---- Formular ---- */
-.form{ background:var(--surface); border:1px solid var(--rule); border-radius:18px; padding:32px; }
+.form-card{ background:var(--paper); border:1px solid var(--rule); border-radius:16px; padding:30px; }
+.form-card h3{ display:flex; align-items:center; gap:10px; font-size:1.2rem; font-weight:700; margin-bottom:22px; }
+.form-card h3 svg{ width:22px; height:22px; color:var(--acc); }
 .fields{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.f-full{ grid-column:1/-1; }
-label{ display:block; font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--faint); margin-bottom:6px; }
+.full{ grid-column:1/-1; }
+label{ display:block; font-size:.85rem; font-weight:600; color:var(--ink); margin-bottom:6px; }
+label u{ color:var(--acc); text-decoration:none; }
 input,select,textarea{
   width:100%; font-family:inherit; font-size:.95rem; color:var(--ink);
-  background:var(--paper); border:1px solid var(--rule); border-radius:10px; padding:12px 14px;
+  background:var(--surface); border:1px solid var(--rule); border-radius:11px; padding:12px 14px;
   transition:border-color .2s, box-shadow .2s;
 }
-textarea{ resize:vertical; min-height:76px; }
-input:focus,select:focus,textarea:focus{ outline:none; border-color:var(--cyan-br); box-shadow:0 0 0 3px rgba(41,168,224,.2); }
+textarea{ resize:vertical; min-height:92px; }
+input:focus,select:focus,textarea:focus{ outline:none; border-color:var(--acc-br); box-shadow:0 0 0 3px rgba(41,140,224,.18); }
 .actions{ margin-top:22px; display:flex; gap:12px; flex-wrap:wrap; }
 .send{
-  flex:1 1 220px; display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  flex:1 1 210px; display:inline-flex; align-items:center; justify-content:center; gap:9px;
   padding:15px 22px; border-radius:999px; font-family:"Sora"; font-weight:700; font-size:.95rem;
   text-decoration:none; transition:transform .2s, box-shadow .2s, opacity .2s;
 }
 .send svg{ width:18px; height:18px; }
-.send-wa{ background:#25d366; color:#062b13; }
-.send-mail{ background:var(--deep); color:#fff; }
-:root[data-theme="dark"] .send-mail{ background:#193d63; }
-.send:hover{ transform:translateY(-2px); box-shadow:0 12px 26px -12px rgba(0,0,0,.45); }
+.wa{ background:#25d366; color:#062b13; }
+.ml{ background:var(--deep); color:#fff; }
+:root[data-theme="dark"] .ml{ color:#08131f; }
+.send:hover{ transform:translateY(-2px); box-shadow:0 12px 26px -12px rgba(0,0,0,.4); }
 .send[aria-disabled="true"]{ opacity:.4; pointer-events:none; }
-.hint{ margin-top:14px; font-size:.82rem; color:var(--faint); text-align:center; }
-.hint.ok{ color:var(--cyan); font-weight:700; }
-.send:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{ outline:2px solid var(--cyan-br); outline-offset:2px; }
+.note{ margin-top:14px; font-size:.8rem; color:var(--faint); text-align:center; }
+.note.ok{ color:var(--acc); font-weight:700; }
+:focus-visible{ outline:2px solid var(--acc-br); outline-offset:2px; }
 
-footer{ margin-top:44px; padding-top:20px; border-top:1px solid var(--rule); text-align:center; font-size:.78rem; color:var(--faint); line-height:1.7; }
+/* --- Raster --- */
+.grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.grid2{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.g-card{
+  background:var(--surface); border:1px solid var(--rule); border-radius:16px; padding:26px 24px;
+  transition:transform .25s cubic-bezier(.2,.7,.3,1), border-color .25s, box-shadow .25s;
+}
+.g-card:hover{ transform:translateY(-5px); border-color:var(--acc-br); box-shadow:0 16px 34px -20px rgba(10,42,82,.5); }
+.g-card i{ width:44px; height:44px; border-radius:12px; background:var(--tint); color:var(--acc); display:flex; align-items:center; justify-content:center; margin-bottom:15px; }
+.g-card svg{ width:22px; height:22px; }
+.g-card h3{ font-size:1.02rem; font-weight:700; margin-bottom:6px; }
+.g-card p{ font-size:.92rem; color:var(--soft); }
 
-@media (max-width:720px){
-  .tiles{ grid-template-columns:repeat(2,1fr); }
+.hero-card{ background:var(--tint); border:1px solid var(--acc-br); }
+.hero-card i{ background:var(--acc); color:#fff; }
+.hero-card h3{ font-size:1.15rem; }
+
+/* --- Schritte --- */
+.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; counter-reset:s; }
+.step{ background:var(--surface); border:1px solid var(--rule); border-radius:16px; padding:28px 24px; }
+.step::before{
+  counter-increment:s; content:"0" counter(s);
+  font-family:"Sora"; font-weight:800; font-size:1.5rem; color:var(--acc-br);
+  display:block; margin-bottom:12px;
+}
+.step h3{ font-size:1.02rem; font-weight:700; margin-bottom:6px; }
+.step p{ font-size:.92rem; color:var(--soft); }
+
+footer{ background:var(--surface); border-top:1px solid var(--rule); padding:34px 0; text-align:center; font-size:.82rem; color:var(--faint); line-height:1.8; }
+footer b{ color:var(--soft); }
+footer a{ color:var(--acc); text-decoration:none; }
+
+@media (max-width:880px){
+  .signup-grid{ grid-template-columns:1fr; }
+  .grid3{ grid-template-columns:repeat(2,1fr); }
   .steps{ grid-template-columns:1fr; }
-  .fields{ grid-template-columns:1fr; }
+}
+@media (max-width:600px){
+  section{ padding:48px 0; }
+  .hero{ padding:46px 0 4px; }
+  .grid3,.grid2,.fields{ grid-template-columns:1fr; }
+  .form-card,.card{ padding:22px; }
+  .top-call span{ display:none; }
 }
 @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header>
-    <img class="r r1" src="../images/logo-moveeasy.png" alt="MoveEasy Transporte">
-    <div class="tag r r1">Partnerprogramm</div>
-    <h1 class="r r2">Sie empfehlen uns.<br><em>Wir räumen. Sie verdienen mit.</em></h1>
-    <p class="sub r r3">Für alle, bei denen regelmäßig Wohnungen leer werden müssen — von Hamburg bis Lübeck und Kiel.</p>
-    <div class="flow r r4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  </header>
-
-  <section>
-    <h2>Für wen</h2>
-    <p class="lead">Sieben Berufsgruppen, die immer wieder vor demselben vollen Raum stehen.</p>
-    <div class="tiles">
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg>
-        <b>Immobilienmakler</b><span>Leer verkauft sich besser</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h3M8 11h3M8 15h3M14 7h2M14 11h2M14 15h2"/></svg>
-        <b>Hausverwaltungen</b><span>Mieterwechsel &amp; volle Keller</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 4.4-3.4 7.4-8 8-4.6-.6-8-3.6-8-8V7z"/><path d="M9.5 12.2l1.9 1.9 3.4-3.6"/></svg>
-        <b>Berufsbetreuer</b><span>Dokumentiert fürs Gericht</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.7-7 9-7 9z"/></svg>
-        <b>Pflegeheime</b><span>Zimmer in Tagen frei</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>
-        <b>Sanierungsfirmen</b><span>Wir räumen vor Ihnen</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="7" height="12"/><rect x="14" y="4" width="7" height="17"/><path d="M6 13h1M6 17h1M17 8h1M17 12h1M17 16h1"/></svg>
-        <b>Wohnungsgesellschaften</b><span>Feste Sätze je Größe</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h4"/></svg>
-        <b>Nachlasspfleger</b><span>Fundliste statt Container</span>
-      </div>
-      <div class="tile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>
-        <b>Passt nicht ganz?</b><span>Fragen Sie trotzdem</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>So einfach läuft es</h2>
-    <div class="steps">
-      <div class="stepc">
-        <h3>Objekt melden</h3>
-        <p>Adresse und Wunschtermin per WhatsApp. Mehr brauchen wir nicht.</p>
-      </div>
-      <div class="stepc">
-        <h3>Wir machen alles</h3>
-        <p>Kostenlose Besichtigung, Festpreis, Räumung, besenreine Übergabe.</p>
-      </div>
-      <div class="stepc">
-        <h3>Sie bekommen Provision</h3>
-        <p>Monatliche Gutschrift, ab dem ersten Auftrag.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Ihre Provision</h2>
-    <p class="lead">Kein Vertrag, keine Mindestmenge, jederzeit kündbar.</p>
-    <div class="deal">
-      <div class="num"><span class="fill">&nbsp;</span>&thinsp;%</div>
-      <p class="of">der Auftragssumme — für jeden Auftrag, den Sie uns bringen.</p>
-      <div class="pills">
-        <span>Ab dem 1. Auftrag</span>
-        <span>Besichtigung in <span class="fill">&nbsp;</span> Tagen</span>
-        <span>Monatliche Gutschrift</span>
-        <span>Festpreis ohne Nachschlag</span>
-      </div>
-    </div>
-    <p class="hint">Sie dürfen keine Provision annehmen? Dann geben wir denselben Nachlass an Ihren Kunden weiter.</p>
-  </section>
-
-  <section>
-    <h2>Wo wir fahren</h2>
-    <p class="lead">Ohne Anfahrtszuschlag. Objekte außerhalb einfach anfragen.</p>
-    <div class="area">
-      <span>Hamburg</span><span>Ahrensburg</span><span>Bargteheide</span><span>Bad Oldesloe</span>
-      <span>Reinbek</span><span>Glinde</span><span>Großhansdorf</span><span>Ammersbek</span>
-      <span>Trittau</span><span>Reinfeld</span><span>Bad Segeberg</span><span>Lübeck</span>
-      <span>Kiel</span><span>Elmenhorst</span>
-    </div>
-  </section>
-
-  <section id="anmeldung">
-    <h2>Jetzt Partner werden</h2>
-    <p class="lead">Ausfüllen, absenden, fertig. Wir melden uns am nächsten Werktag.</p>
-
-    <form class="form" id="pf" novalidate>
-      <div class="fields">
-        <div>
-          <label for="n">Ihr Name</label>
-          <input id="n" type="text" autocomplete="name" placeholder="Vor- und Nachname" required>
-        </div>
-        <div>
-          <label for="c">Firma oder Büro</label>
-          <input id="c" type="text" autocomplete="organization" placeholder="Optional">
-        </div>
-        <div>
-          <label for="g">Ihre Berufsgruppe</label>
-          <select id="g">
-            <option>Immobilienmakler</option>
-            <option>Hausverwaltung</option>
-            <option>Berufsbetreuer / Betreuungsbüro</option>
-            <option>Senioren- oder Pflegeheim</option>
-            <option>Reinigungs- oder Sanierungsfirma</option>
-            <option>Wohnungsbaugesellschaft</option>
-            <option>Nachlasspfleger</option>
-            <option>Etwas anderes</option>
-          </select>
-        </div>
-        <div>
-          <label for="k">Telefon oder E-Mail</label>
-          <input id="k" type="text" autocomplete="tel" placeholder="Wie erreichen wir Sie?" required>
-        </div>
-        <div class="f-full">
-          <label for="m">Wobei können wir helfen?</label>
-          <textarea id="m" placeholder="Optional — z. B. wie viele Objekte im Jahr anfallen."></textarea>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="send send-wa" id="wa" href="#" target="_blank" rel="noopener" aria-disabled="true">
-          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.4 1.7 6.3L4 29l8-1.7c1.8 1 3.8 1.5 6 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.7 1 1-4.6-.2-.4A9.8 9.8 0 1116 24.8zm5.4-7.3c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5.3-.5c0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.8 1.2 3c.1.2 2 3.2 5 4.4.7.3 1.3.5 1.7.6.7.2 1.3.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
-          Per WhatsApp senden
-        </a>
-        <a class="send send-mail" id="ml" href="#" aria-disabled="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-          Per E-Mail senden
-        </a>
-      </div>
-      <p class="hint" id="hint">Name und Kontakt ausfüllen, dann wird abgeschickt.</p>
-    </form>
-  </section>
-
-  <footer>
-    <b>MoveEasy Transporte</b> · Bundesstraße 21, 23869 Elmenhorst<br>
-    +49 177 5642585 · info@move-easy.info · Mo–Sa 6:30–18:00 Uhr<br>
-    Leistungsbeschreibung, kein Vertragsangebot. Konditionen vorbehaltlich schriftlicher Vereinbarung.
-  </footer>
-
+<div class="top">
+  <div class="wrap">
+    <a href="../"><img src="../images/logo-moveeasy.png" alt="MoveEasy Transporte"></a>
+    <a class="top-call" href="tel:+491775642585">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <span>01775642585</span>
+    </a>
+  </div>
 </div>
+
+<div class="hero wrap">
+  <div class="kick r r1">Partnerprogramm</div>
+  <h1 class="r r2">Gemeinsam <em>mehr bewegen</em></h1>
+  <p class="r r3">Sie betreuen Kunden in Umzugs- oder Aufl&ouml;sungssituationen &ndash; wir liefern den zuverl&auml;ssigen Service dazu. Empfehlen Sie uns weiter und profitieren Sie von Provision und Rabatt.</p>
+</div>
+
+<section class="signup" id="anmeldung">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Jetzt anmelden</div>
+      <h2>Partner werden &ndash; kostenlos &amp; unverbindlich</h2>
+      <p>Tragen Sie sich ein und wir melden uns innerhalb von 24 Stunden. Keine Verpflichtung &ndash; Sie entscheiden, ob und wie wir zusammenarbeiten.</p>
+    </div>
+
+    <div class="signup-grid">
+      <aside>
+        <div class="card person">
+          <div class="avatar">VD</div>
+          <div class="role">Ihr Ansprechpartner</div>
+          <h3>Vashik Davtyan</h3>
+          <p>Ich freue mich auf Ihre Nachricht und ein pers&ouml;nliches Gespr&auml;ch.</p>
+        </div>
+        <div class="mini">
+          <a href="tel:+491775642585">
+            <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.3 0 .7-.2 1L6.6 10.8z"/></svg></i>
+            <span><b>Lieber anrufen?</b>01775642585</span>
+          </a>
+          <a href="mailto:info@move-easy.info">
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i>
+            <span><b>E-Mail schreiben</b>info@move-easy.info</span>
+          </a>
+        </div>
+      </aside>
+
+      <form class="form-card" id="pf" novalidate>
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/><path d="M3 12h18"/></svg>
+          Partner-Anmeldung
+        </h3>
+        <div class="fields">
+          <div class="full">
+            <label for="fi">Unternehmen / Kanzlei <u>*</u></label>
+            <input id="fi" type="text" autocomplete="organization" placeholder="z.&nbsp;B. Mustermann Immobilien GmbH" required>
+          </div>
+          <div class="full">
+            <label for="an">Ansprechpartner <u>*</u></label>
+            <input id="an" type="text" autocomplete="name" placeholder="Vor- und Nachname" required>
+          </div>
+          <div class="full">
+            <label for="ty">Partner-Typ</label>
+            <select id="ty">
+              <option value="">Bitte w&auml;hlen &hellip;</option>
+              <option>Immobilienmakler</option>
+              <option>Hausverwaltungen</option>
+              <option>Berufsbetreuer / Betreuungsb&uuml;ros</option>
+              <option>Senioren- und Pflegeheime</option>
+              <option>Reinigungs- und Sanierungsfirmen</option>
+              <option>Wohnungs- und Immobiliengesellschaften</option>
+              <option>Nachlasspfleger</option>
+              <option>Sonstige</option>
+            </select>
+          </div>
+          <div>
+            <label for="te">Telefon <u>*</u></label>
+            <input id="te" type="tel" autocomplete="tel" required>
+          </div>
+          <div>
+            <label for="em">E-Mail</label>
+            <input id="em" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="or">Ort / Region</label>
+            <input id="or" type="text" placeholder="z.&nbsp;B. Ahrensburg">
+          </div>
+          <div>
+            <label for="vo">Voraussichtliches Volumen</label>
+            <input id="vo" type="text" placeholder="z.&nbsp;B. 2&ndash;5 Auftr&auml;ge / Monat">
+          </div>
+          <div class="full">
+            <label for="na">Nachricht</label>
+            <textarea id="na" placeholder="Erz&auml;hlen Sie uns kurz, wie eine Zusammenarbeit aussehen k&ouml;nnte."></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="send wa" id="wa" href="#" target="_blank" rel="noopener" aria-disabled="true">
+            <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.3.6 4.4 1.7 6.3L4 29l8-1.7c1.8 1 3.8 1.5 6 1.5 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-4.7 1 1-4.6-.2-.4A9.8 9.8 0 1116 24.8zm5.4-7.3c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5.3-.5c0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.8 1.2 3c.1.2 2 3.2 5 4.4.7.3 1.3.5 1.7.6.7.2 1.3.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+            Per WhatsApp senden
+          </a>
+          <a class="send ml" id="ml" href="#" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Per E-Mail senden
+          </a>
+        </div>
+        <p class="note" id="note">Unternehmen, Ansprechpartner und Telefon ausf&uuml;llen &ndash; dann geht es los.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">F&uuml;r wen</div>
+      <h2>Gesucht: Partner mit Anspruch</h2>
+      <p>F&uuml;r alle, die regelm&auml;&szlig;ig Umzugs-, R&auml;umungs- oder Aufl&ouml;sungsleistungen ben&ouml;tigen.</p>
+    </div>
+    <div class="grid3">
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></i><h3>Immobilienmakler</h3><p>Sie vermitteln &ndash; wir &uuml;bernehmen den reibungslosen Umzug.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h3M8 11h3M8 15h3M14 7h2M14 11h2M14 15h2"/></svg></i><h3>Hausverwaltungen</h3><p>Wohnungs&uuml;bergaben und R&auml;umungen termingerecht aus einer Hand.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 4.4-3.4 7.4-8 8-4.6-.6-8-3.6-8-8V7z"/><path d="M9.5 12.2l1.9 1.9 3.4-3.6"/></svg></i><h3>Berufsbetreuer &amp; Betreuungsb&uuml;ros</h3><p>Piet&auml;tvolle Haushalts- und Wohnungsaufl&ouml;sungen.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.7-7 9-7 9z"/></svg></i><h3>Senioren- und Pflegeheime</h3><p>Einf&uuml;hlsame Seniorenumz&uuml;ge mit festem Ansprechpartner.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg></i><h3>Reinigungs- und Sanierungsfirmen</h3><p>Wir r&auml;umen vor, Sie reinigen danach &ndash; saubere Arbeitsteilung.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="7" height="12"/><rect x="14" y="4" width="7" height="17"/><path d="M6 13h1M6 17h1M17 8h1M17 12h1M17 16h1"/></svg></i><h3>Wohnungs- und Immobiliengesellschaften</h3><p>Zuverl&auml;ssige R&auml;umungen und &Uuml;bergaben im Bestand.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h4"/></svg></i><h3>Nachlasspfleger</h3><p>Nachlassr&auml;umungen &ndash; diskret, piet&auml;tvoll und dokumentiert.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="signup">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Ihre Vorteile</div>
+      <h2>Was Sie als Partner gewinnen</h2>
+    </div>
+    <div class="grid2" style="margin-bottom:18px;">
+      <div class="g-card hero-card">
+        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M19 5L5 19"/><circle cx="7.5" cy="7.5" r="2.6"/><circle cx="16.5" cy="16.5" r="2.6"/></svg></i>
+        <h3>Empfehlungsprovision</h3>
+        <p>Empfehlen Sie uns weiter und erhalten Sie eine attraktive prozentuale Provision f&uuml;r jeden vermittelten und durchgef&uuml;hrten Auftrag.</p>
+      </div>
+      <div class="g-card hero-card">
+        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.6-1-1.8-1.6-3-1.6-1.9 0-3.2 1.4-3.2 4.1s1.3 4.1 3.2 4.1c1.2 0 2.4-.6 3-1.6"/><path d="M7 11h5M7 13.6h5"/></svg></i>
+        <h3>Festkundenrabatt</h3>
+        <p>Geben Sie uns regelm&auml;&szlig;ig Auftr&auml;ge? Dann profitieren Sie und Ihre Kunden von dauerhaft reduzierten Festpreisen.</p>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 4.4-3.4 7.4-8 8-4.6-.6-8-3.6-8-8V7z"/></svg></i><h3>Voll versichert</h3><p>Jeder Transport ist umfassend versichert.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></i><h3>Zuverl&auml;ssig &amp; termingerecht</h3><p>Wir halten Termine ein &ndash; auch kurzfristig.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.4"/><path d="M3 20c0-3.4 2.7-5.6 6-5.6s6 2.2 6 5.6"/><path d="M17 8.5a3 3 0 010 5"/></svg></i><h3>Pers&ouml;nlicher Ansprechpartner</h3><p>Ein fester Kontaktpartner &ndash; kurze Wege, klare Absprachen.</p></div>
+      <div class="g-card"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-3 5 3 5-3 4 3"/><path d="M7 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/><path d="M4 12v6a2 2 0 002 2h12a2 2 0 002-2v-6"/></svg></i><h3>Diskret &amp; piet&auml;tvoll</h3><p>Einf&uuml;hlsam besonders bei Aufl&ouml;sungen und Nachlassr&auml;umungen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">So funktioniert's</div>
+      <h2>In 3 Schritten Partner werden</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Anmelden</h3><p>Formular ausf&uuml;llen &ndash; in unter zwei Minuten. Wir melden uns pers&ouml;nlich.</p></div>
+      <div class="step"><h3>Kennenlernen</h3><p>Kurzes Gespr&auml;ch, Konditionen kl&auml;ren, individuelle Bedingungen festlegen.</p></div>
+      <div class="step"><h3>Profitieren</h3><p>Ab sofort empfehlen oder beauftragen Sie uns &ndash; und profitieren von Provision und Rabatt.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>MoveEasy Transporte</b> &middot; Bundesstra&szlig;e 21, 23869 Elmenhorst<br>
+    <a href="tel:+491775642585">01775642585</a> &middot; <a href="mailto:info@move-easy.info">info@move-easy.info</a> &middot; Mo&ndash;Sa 6:30&ndash;18:00 Uhr<br>
+    <a href="../">Zur&uuml;ck zur Startseite</a>
+  </div>
+</footer>
 
 <script>
 (function(){
-  var f = document.getElementById('pf');
-  var wa = document.getElementById('wa');
-  var ml = document.getElementById('ml');
-  var hint = document.getElementById('hint');
-  var PHONE = '491775642585';
-  var MAIL  = 'info@move-easy.info';
-
-  function val(id){ return (document.getElementById(id).value || '').trim(); }
-
-  function build(){
-    var name = val('n'), firma = val('c'), gruppe = document.getElementById('g').value,
-        kontakt = val('k'), msg = val('m');
-    return [
-      'Anmeldung zum MoveEasy-Partnerprogramm',
-      '',
-      'Name: ' + name,
-      firma ? 'Firma: ' + firma : null,
-      'Berufsgruppe: ' + gruppe,
-      'Kontakt: ' + kontakt,
-      msg ? '' : null,
-      msg ? msg : null
-    ].filter(function(l){ return l !== null; }).join('\n');
+  var wa=document.getElementById('wa'), ml=document.getElementById('ml'), note=document.getElementById('note');
+  var PHONE='491775642585', MAIL='info@move-easy.info';
+  function v(id){ return (document.getElementById(id).value||'').trim(); }
+  function body(){
+    var t=document.getElementById('ty').value;
+    return ['Partner-Anmeldung (MoveEasy Transporte)','',
+      'Unternehmen: '+v('fi'),
+      'Ansprechpartner: '+v('an'),
+      t?'Partner-Typ: '+t:null,
+      'Telefon: '+v('te'),
+      v('em')?'E-Mail: '+v('em'):null,
+      v('or')?'Ort / Region: '+v('or'):null,
+      v('vo')?'Volumen: '+v('vo'):null,
+      v('na')?'':null, v('na')?v('na'):null
+    ].filter(function(x){return x!==null;}).join('\n');
   }
-
-  function update(){
-    var ok = val('n').length > 1 && val('k').length > 3;
-    var body = build();
+  function upd(){
+    var ok=v('fi').length>1 && v('an').length>1 && v('te').length>4;
     if(ok){
-      wa.href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(body);
-      ml.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Anmeldung Partnerprogramm')
-              + '&body=' + encodeURIComponent(body);
-      hint.textContent = 'Bereit — Kanal wählen und absenden.';
-      hint.className = 'hint ok';
+      var b=body();
+      wa.href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(b);
+      ml.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Partner-Anmeldung')+'&body='+encodeURIComponent(b);
+      note.textContent='Bereit \u2014 Kanal w\u00e4hlen und absenden.'; note.className='note ok';
     }else{
-      wa.removeAttribute('href');
-      ml.removeAttribute('href');
-      hint.textContent = 'Name und Kontakt ausfüllen, dann wird abgeschickt.';
-      hint.className = 'hint';
+      wa.removeAttribute('href'); ml.removeAttribute('href');
+      note.textContent='Unternehmen, Ansprechpartner und Telefon ausf\u00fcllen \u2013 dann geht es los.';
+      note.className='note';
     }
-    wa.setAttribute('aria-disabled', ok ? 'false' : 'true');
-    ml.setAttribute('aria-disabled', ok ? 'false' : 'true');
+    wa.setAttribute('aria-disabled', ok?'false':'true');
+    ml.setAttribute('aria-disabled', ok?'false':'true');
   }
-
-  f.addEventListener('input', update);
-  f.addEventListener('change', update);
-  f.addEventListener('submit', function(e){ e.preventDefault(); });
-  update();
+  var f=document.getElementById('pf');
+  f.addEventListener('input',upd); f.addEventListener('change',upd);
+  f.addEventListener('submit',function(e){e.preventDefault();});
+  upd();
 })();
 </script>
 </body>
