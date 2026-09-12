@@ -1,3 +1,7 @@
+/* Browser soll beim Neuladen nicht die alte Scroll-Position wiederherstellen -
+   sonst startet die Seite mittendrin. Anker (#kontakt) funktionieren weiter. */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Scroll progress bar ---------- */
