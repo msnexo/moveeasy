@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nextBtn.disabled = !isStepValid(current);
     }
 
-    function showStep(index) {
+    function showStep(index, scroll) {
       steps.forEach((panel, i) => { panel.hidden = i !== index; });
       tabs.forEach((tab, i) => {
         tab.classList.toggle('active', i === index);
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       backBtn.hidden = index === 0;
       nextBtn.textContent = index === lastStep ? 'Kostenloses Angebot anfordern' : 'Weiter →';
       updateNextState();
-      wizard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (scroll !== false) wizard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     backBtn.addEventListener('click', () => {
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = mailto;
     }
 
-    showStep(0);
+    showStep(0, false);   // beim Laden nicht scrollen - sonst startet die Seite mittendrin
   }
 
   /* ---------- Footer year ---------- */
