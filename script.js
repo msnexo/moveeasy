@@ -36,13 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const isOpen = mainNav.classList.toggle('open');
     navToggle.classList.toggle('open', isOpen);
     navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  const closeNav = () => {
     mainNav.classList.remove('open');
     navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Menü öffnen');
     document.body.style.overflow = '';
-  }));
+  };
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  // Menue auch per Tipp neben das Menue oder mit Escape schliessen
+  document.addEventListener('click', (e) => {
+    if (mainNav.classList.contains('open') && !mainNav.contains(e.target) && !navToggle.contains(e.target)) closeNav();
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mainNav.classList.contains('open')) closeNav(); });
 
   /* ---------- Reveal on scroll ---------- */
   const revealEls = document.querySelectorAll('.reveal');
