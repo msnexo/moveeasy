@@ -514,3 +514,10 @@ section{ position: relative; }
 .pb-card b{ display:block; font-family: var(--pb-head); font-size:1rem; margin-bottom:3px; color: var(--pb-ink); }
 .pb-card span{ font-size:.91rem; color: var(--pb-soft); }
 @media (max-width: 880px){ .partnerband-grid{ grid-template-columns:1fr; gap:30px; } }
+
+/* ---------- Ansprechpartner im Kontaktbereich ---------- */
+.contact-person{ display:flex; align-items:center; justify-content:center; gap:16px; margin:0 auto 28px; text-align:left; }
+.contact-person img{ width:68px; height:68px; border-radius:50%; object-fit:cover; object-position:center top; border:3px solid #fff; box-shadow:0 8px 22px -10px rgba(8,27,61,.45); flex-shrink:0; }
+.contact-person small{ display:block; font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--coral); }
+.contact-person b{ display:block; font-family:var(--font-head); font-size:1.1rem; color:var(--espresso-950); line-height:1.25; }
+.contact-person span{ display:block; font-size:.92rem; color:var(--espresso-950); opacity:.72; }
